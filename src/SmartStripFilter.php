@@ -39,7 +39,7 @@ class SmartStripFilter
 		$_offset = 0;
 
 		// Unify Line-Breaks to \n
-		$source = preg_replace("/\015\012|\015|\012/", "\n", $source);
+		$source = (string) preg_replace("/\015\012|\015|\012/", "\n", $source);
 
 		// capture Internet Explorer Conditional Comments
 		if (preg_match_all('#<!--\[[^\]]+\]>.*?<!\[[^\]]+\]-->#is', $source, $matches, PREG_OFFSET_CAPTURE | PREG_SET_ORDER)) {
@@ -47,7 +47,7 @@ class SmartStripFilter
 				$store[] = $match[0][0];
 				$_length = strlen($match[0][0]);
 				$replace = '@!@SMARTY:' . $_store . ':SMARTY@!@';
-				$source = substr_replace($source, $replace, $match[0][1] - $_offset, $_length);
+				$source = (string) substr_replace($source, $replace, $match[0][1] - $_offset, $_length);
 
 				$_offset += $_length - strlen($replace);
 				$_store++;
@@ -56,7 +56,7 @@ class SmartStripFilter
 
 		// Strip all HTML-Comments
 		// yes, even the ones in <script> - see http://stackoverflow.com/a/808850/515124
-		$source = preg_replace('#<!--.*?-->#ms', '', $source);
+		$source = (string) preg_replace('#<!--.*?-->#ms', '', $source);
 
 		// capture html elements not to be messed with
 		$_offset = 0;
@@ -84,7 +84,7 @@ class SmartStripFilter
 				'#>\s+$#Ss' => '>',
 		];
 
-		$source = preg_replace(array_keys($expressions), array_values($expressions), $source);
+		$source = (string) preg_replace(array_keys($expressions), array_values($expressions), $source);
 		// note: for some very weird reason trim() seems to remove spaces inside attributes.
 		// maybe a \0 byte or something is interfering?
 		// $source = trim( $source );
