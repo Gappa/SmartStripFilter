@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Nelson\Latte\Filters\SmartStripFilter\DI;
 
@@ -8,7 +9,6 @@ use Nette\DI\Definitions\FactoryDefinition;
 
 final class SmartStripFilterExtension extends CompilerExtension
 {
-
 	public function loadConfiguration()
 	{
 		$builder = $this->getContainerBuilder();
@@ -31,5 +31,4 @@ final class SmartStripFilterExtension extends CompilerExtension
 				->addSetup('addFilter', ['smartstrip', [$this->prefix('@default'), 'stripFilterAware']]);
 		}
 	}
-
 }
