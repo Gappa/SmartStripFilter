@@ -26,22 +26,13 @@ class SmartStripFilter
 {
 	use SmartObject;
 
-	/**
-	 * @param  FilterInfo $info
-	 * @param  string     $source
-	 * @return string
-	 */
-	public static function stripFilterAware(FilterInfo $info, $source)
+	public static function stripFilterAware(FilterInfo $info, string $source): string
 	{
 		return self::strip($source);
 	}
 
 
-	/**
-	 * @param  string $source
-	 * @return string
-	 */
-	public static function strip($source)
+	public static function strip(string $source): string
 	{
 		$store = [];
 		$_store = 0;
