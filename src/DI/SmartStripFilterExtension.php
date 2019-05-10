@@ -9,7 +9,7 @@ use Nette\DI\Definitions\FactoryDefinition;
 
 final class SmartStripFilterExtension extends CompilerExtension
 {
-	public function loadConfiguration()
+	public function loadConfiguration(): void
 	{
 		$builder = $this->getContainerBuilder();
 		$builder->addDefinition($this->prefix('default'))
@@ -17,7 +17,7 @@ final class SmartStripFilterExtension extends CompilerExtension
 	}
 
 
-	public function beforeCompile()
+	public function beforeCompile(): void
 	{
 		$builder = $this->getContainerBuilder();
 
