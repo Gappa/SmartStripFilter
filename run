@@ -18,7 +18,7 @@ PHP_DEV="php81"
 #fi
 
 # Command shortcuts
-PHPSTAN="$PHP vendor/bin/phpstan analyse --configuration ./.server/phpstan.neon --memory-limit 512M"
+PHPSTAN="$PHP vendor/bin/phpstan analyse --configuration ./phpstan/phpstan.neon --memory-limit 512M"
 PHPUNIT="$PHP vendor/bin/phpunit --configuration tests/phpunit.xml"
 PHPSTAN_BL="$PHPSTAN --generate-baseline ./.server/phpstan-baseline.neon"
 PHPCS_CONFIG="--standard=phpcs.xml -sp src"

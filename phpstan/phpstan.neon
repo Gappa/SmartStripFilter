@@ -1,13 +1,17 @@
 parameters:
-	autoload_directories:
-		 - src/
+	tmpDir: %currentWorkingDirectory%/temp/phpstan/
+	scanDirectories:
+		- %currentWorkingDirectory%/vendor/
 
 	paths:
-		- src/
+		- %currentWorkingDirectory%/src/
+
+
+	excludePaths:
 
 	level: 7
 
-
-includes:
-	- ../vendor/phpstan/phpstan-nette/extension.neon
-	- ../vendor/phpstan/phpstan-nette/rules.neon
+	reportUnmatchedIgnoredErrors: true # default, but to turn it off when needed
+#	checkGenericClassInNonGenericObjectType: false
+	ignoreErrors:
+		# Specific error messages
