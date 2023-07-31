@@ -1,19 +1,29 @@
 {
 	"name": "nelson/smartstripfilter",
 	"require": {
-		"php": "^7.1|^8.0",
+		"php": ">=8.1 <8.2",
 		"nette/di": "^3.0",
-		"nette/utils": "^3.0",
-		"latte/latte": "^2.5 | ^3.0"
+		"nette/utils": "^3.0 || ^4.0",
+		"latte/latte": "^3.0"
 	},
 	"require-dev": {
+		"jetbrains/phpstorm-attributes": "^1.0",
 		"nette/tester": "^2.0",
-		"phpstan/phpstan-shim": "^0.11.1",
-		"phpstan/phpstan-nette": "^0.11.0"
+		"phpstan/extension-installer": "^1.0",
+		"phpstan/phpstan": "^1.0.0",
+		"phpstan/phpstan-nette": "^1.0.0",
+		"roave/security-advisories": "dev-master",
+		"slevomat/coding-standard": "^8.13"
 	},
 	"autoload": {
 		"psr-4": {
 			"Nelson\\Latte\\Filters\\SmartStripFilter\\": "src/"
+		}
+	},
+	"config": {
+		"allow-plugins": {
+			"phpstan/extension-installer": true,
+			"dealerdirect/phpcodesniffer-composer-installer": true
 		}
 	}
 }
