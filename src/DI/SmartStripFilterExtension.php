@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Nelson\Latte\Filters\SmartStripFilter\DI;
@@ -23,6 +24,7 @@ final class SmartStripFilterExtension extends CompilerExtension
 
 		// Latte filter
 		$latteFactoryName = 'latte.latteFactory';
+
 		if ($builder->hasDefinition($latteFactoryName)) {
 			/** @var FactoryDefinition $latteFactory */
 			$latteFactory = $builder->getDefinition($latteFactoryName);
