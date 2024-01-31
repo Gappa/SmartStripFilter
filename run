@@ -3,7 +3,7 @@
 # Define vars
 MAINTENANCE_FILE=".maintenance";
 #DEV_FILE="./app/config/.dev";
-PHP_DEV="php81"
+PHP_DEV="php82"
 #PHP_PROD="php8.1" # Change to whatever the production server uses
 #COMPOSER_INSTALL_COMMAND_DEV="$PHP_DEV composer.phar install";
 #COMPOSER_INSTALL_COMMAND_PROD="$PHP_PROD composer.phar install --no-dev";
